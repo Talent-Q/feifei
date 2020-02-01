@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>你好，洪开林！</title>
+
+<!-- JS文件 -->
+
+    <!-- 时间 -->
+    <script type="text/javascript" src="scripts/realTime.js"></script>
+    <!-- 问候 -->
+    <script type="text/javascript" src="scripts/greeting.js"></script>
+    <!-- 背景外部加载项 -->
+    <script src='scripts/css-doodle.min.js'></script>
+    <!-- 新年快乐 -->
+    <script src='scripts/happyNewYear.js'></script>
+    <!-- 友谊历程 -->
+    <script src='scripts/friendship.js'></script>
+    <!-- 石头寄语 -->
+    <script src='scripts/stoneWords.js'></script>
+
+    
+
+<!-- CSS文件 -->
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <div id="backgroundpicture"></div>
+
+    <div id="background">
+        <!-- 动态背景 -->
+        <css-doodle>
+            :doodle {
+            @grid: 50x1 / 70vmin;
+            perspective: 23vmin;
+            }
+        
+            background: @multi(@r(200, 240), (
+            radial-gradient(
+                @p(#00b8a9, #f8f3d4, #f6416c, #ffde7d) 15%,
+                transparent 50%
+            ) @r(100%) @r(100%) / @r(1%, 3%, .1) @lr() no-repeat
+            ));
+        
+            @size: 80%;
+            @place-cell: center;
+            
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            animation: scale-up 20s linear infinite;
+            animation-delay: calc(@i() * -.4s);
+        
+            @keyframes scale-up {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 0, 0) rotate(0);
+            }
+            10% { 
+                opacity: 1; 
+            }
+            95% {
+                transform:
+                translate3d(0, 0, @r(50vmin, 55vmin))
+                rotate(@r(-360deg, 360deg));
+            }
+            100% {
+                opacity: 0;
+                transform: translate3d(0, 0, 1vmin);
+            }
+            }
+        </css-doodle>
+    </div>
+
+    <!-- 主盒子 -->
+    <div id = 'main'>
+
+        <!-- 主标题 -->
+        <div><h1>你好，洪开林！</h1></div>
+    
+        <!-- 显示时间 -->
+        <div id="getTime">
+            <script>
+                getTime();
+                setInterval("getTime()",1000);
+            </script>
+        </div>
+
+        <!-- 清除浮动 -->
+        <div class="clear"></div>
+
+        <!-- 显示问候语 -->
+        <div id="greeting">
+            <p><i><span style="font-family: 'Times New Roman', Times, serif;">Hi</span>,狒狒：</i></p>
+            <script>
+                greeting();
+            </script>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+            <!-- 跳转到 “新年快乐” -->
+            <input id="happyNewYearBtn" type="button"  value="新年快乐" onclick="happyNewYear()" />
+            
+            <!-- 跳转到 “友谊历程” -->
+            <!-- <input type="button"  value="友谊历程" onclick="friendship()"  style="cursor:pointer"/> -->
+            
+            <!-- 跳转到 “石头寄语” -->
+            <!-- <input type="button"  value="石头寄语" onclick="stoneWords()"  style="cursor:pointer"/> -->
+
+        
+        </div>
+        
+    </div>
+    
+</body>
+</html>

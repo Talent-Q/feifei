@@ -1,0 +1,57 @@
+html, body { 
+    height: 100%;
+    margin: 0; 
+    overflow: hidden; 
+}
+body {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    background: rgb(59, 132, 167);
+}
+
+/* #background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: url('../images/11.jpg');
+} */
+
+#backgroundpicture {
+    position: absolute;
+    margin: 0 22%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+    background-image: url('../images/9 (3).jpg');
+    background-size: 100% auto;
+}
+
+#main {
+    position: absolute;
+    margin: 0 22%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+    background-size: 100% auto;
+    padding: 3%;
+    /* color: rgb(183, 243, 134); */
+    color: red;
+    font-family: "楷体";
+}
+
+/* 标题居中 */
+h1{
+    text-align: center;
+    color: rgb(238, 85, 14);
+} 
+
+#back{
+    cursor:pointer;
+    font-size:larger;
+    color: rgb(187, 73, 73);
+    border: none;
+    background-color: rgba(255,255,255,0.1);
+}
